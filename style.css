@@ -1,0 +1,151 @@
+  :root {
+    font-family: 'Roboto, Arial, sans-serif';
+    font-style: normal;
+    font-weight: 400;
+    color: #0e0f11;
+    line-height: 1;
+    font-stretch: 100%;
+  }
+
+  /*---special fonts ------*/
+  @font-face {
+      font-family: 'Tintin';
+      src: url('fonts/tintin.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+  }
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*-----------FLEXBOX-----*/
+    *,
+  *::before,
+  *::after {
+      box-sizing: inherit;
+      margin: 0;
+      padding: 0;
+  
+  }
+
+  /*   BODY  ------------------*/
+    body {
+      display: flex;
+
+      flex-direction: column;
+      /* column betyder, at alle direkte børn af body placeres i én lodret stak (fra top til bund). */
+
+      min-height: 100vh;
+      /* 100vh på body betyder, at body altid fylder mindst hele højden af viewporten (din synlige skærm). */
+      }
+
+      .site-main {
+        display: flex;
+        flex: 0; 
+        /*flex 0 = Vokser ikke -  indholdet er større end skærmen, kan det skubbe udenfor, især i bredden, hvis børn har fixed widths eller paddings.*/
+        flex-direction: column;
+        padding: 20px;
+        /*---lægger 20px indvendigt, så hvis børn allerede fylder 100% bredde, kan det resultere i scroll til højre (tekst udenfor viewport). */
+      }
+
+      img {
+        border: 0;
+        vertical-align: middle;
+      }
+
+
+    
+    /*HEADER-----------------------*/
+  /* Base nav block */
+  .nav__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  
+  }
+
+  .nav__item {
+    margin-right: 20px;
+    
+  }
+  .nav__item:last-child {
+    margin-right: 0;
+  }
+  /* Modifier: secondary */
+  .nav--secondary  {
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Tintin', sans-serif;
+    font-size: 14px;
+    
+  }
+      .nav--secondary {
+        
+        gap: 20px;
+        list-style: none;
+        }
+  /* Modifier: primary */
+  .nav--primary  {
+    justify-content: flex-end;
+    font-size: 16px;
+    font-weight: bold;
+  }
+      
+      .header {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: #f6f4f5;
+      }
+
+      .header__top {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          background-color: #f6f4f5;
+          margin-right: 20px;
+          padding: 10px 20px;
+          justify-content: flex-end; /* logo til venstre, nav til højre */
+          align-items: flex-end;
+          gap: 10px;
+  }
+      .header__logo {
+        height: 60px;
+        justify-content: flex-start;
+      }
+
+        
+        .header__bottom {
+        background-color: #f6f4f5;   /* baggrund for bottom */
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        position: relative;
+      }
+
+      .nav--primary {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        font-family: 'icomoon', sans-serif;
+      }
+
+    /* FOOTER---------------------------------*/
+      .footer {  
+        background-color: #2dc5d3;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-wrap: wrap;
+        
+      }
+  
+
+
